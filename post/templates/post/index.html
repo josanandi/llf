@@ -9,16 +9,18 @@
     <h1>Lányok Laptopba Fel! </h1>
   </div>
 
-  <div>
-    <h2> A lényeg</h2>
-    <p>
-      Miért is vagy itt? Remélem azért mert kíváncsi vagy, mert tanulni akarsz
-      és talán mert nem tudod hol kéne elkezdeni. Ebben talán ez az oldal, és remélhetőleg a köré épülő közösség,
-      tud majd segítséget nyújtani.
-    </p>
-    <p>published: 29.11.2016, 08:19 </p>
-
-  </div>
+  {% for post in posts %}
+    <div>
+      <h1>{{post.title}}</h1>
+      <p>
+        {{post.text|linebreaksbr}}
+      </p>
+      <p>
+        Published: {{post.published_date}}
+      </p>
+    </div>
+    
+  {% endfor %}
 
 </body>
 
