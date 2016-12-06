@@ -1,27 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Lányok Laptopba Fel!</title>
-</head>
+{% extends 'post/base.html' %}
 
-<body>
-  <div>
-    <h1>Lányok Laptopba Fel! </h1>
-  </div>
-
+{%block content%}
   {% for post in posts %}
-    <div>
-      <h1>{{post.title}}</h1>
+    <div class='post'>
+      <h2><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h2>
       <p>
         {{post.text|linebreaksbr}}
       </p>
-      <p>
-        Published: {{post.published_date}}
-      </p>
     </div>
-    
+
   {% endfor %}
-
-</body>
-
-</html>
+{%endblock%}
